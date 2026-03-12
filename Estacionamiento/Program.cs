@@ -7,6 +7,10 @@ using Estacionamiento.Clases;
 
 namespace Estacionamiento
 {
+    /// <summary>
+    /// DEGM 11/03/2026
+    ///Este es el menu de mi codigo, aqui se crean los lugares de estacionamiento, se cargan los vehiculos y se muestra el menu para interactuar con el sistema.
+    /// </summary>
     class Program
     {
         static void Main()
@@ -23,7 +27,7 @@ namespace Estacionamiento
                 string tipo = piso == 0 ? "Económico" : piso == 1 ? "Preferencial" : "VIP";
                 decimal precio = piso == 0 ? precioEconomico : piso == 1 ? precioPreferencial : precioVIP;
 
-                bool ocupado = (lugar % 2 == 0); // algunos ocupados para probar
+                bool ocupado = (lugar % 2 == 0); 
 
                 lugares[piso, lugar] = new LugarEstacionamiento(numeroLugar, tipo, precio, ocupado);
             }
@@ -102,7 +106,6 @@ namespace Estacionamiento
                         Console.Write("Ingrese nombre del cliente: ");
                         string nombre = Console.ReadLine();
 
-                        // Asignar vehículo
                         lugarSeleccionado.Ocupado = true;
                         VehiculoEstacionado nuevo = new VehiculoEstacionado(placa, nombre, lugarSeleccionado.NumeroLugar, DateTime.Now);
                         bool agregado = false;
@@ -159,7 +162,6 @@ namespace Estacionamiento
                             break;
                         }
 
-                        // Buscar el lugar asociado
                         LugarEstacionamiento lugarVeh = null;
                         for (int i = 0; i < lugares.GetLength(0); i++)
                         {

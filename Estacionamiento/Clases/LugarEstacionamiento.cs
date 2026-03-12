@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Estacionamiento.Clases
 {
+    /// <summary>
+    /// DEGM 11/03/2026
+    /// Esta clase representa un lugar de estacionamiento, con su número, tipo, precio por
+    /// </summary>
     public class LugarEstacionamiento
     {
         public int NumeroLugar { get; set; }
